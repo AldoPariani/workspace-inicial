@@ -188,3 +188,49 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
+
+#Products {
+  text-align: center;
+}
+
+#Subt {
+  text-align: center;
+}
+
+.Div-autos {
+  display: flex;
+  justify-content: space-between;
+  border: solid;
+  border-color: gray;
+  padding: 15px;
+}
+
+.img {
+  height: 150px;
+}
+
+.cositas {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.cantidad {
+  display: flex;
+  justify-content: flex-end;
+  width: 20%;
+}
+
+.cant {
+  font-size: 12px;
+}
+
+.nombre {
+  font-size: 20px;
+}
+
+.desc {
+  font-size: 15px;
+}
