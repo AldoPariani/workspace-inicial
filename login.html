@@ -18,11 +18,29 @@
 
 <body>
   <main class="mt-5">
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
-      </div>
-    </div>
+    <form>
+      <div class="div-log">
+        <div class="Icon-log">
+          <img src="img/login.png" style="width: 500px;">
+        </div>
+        <h1>Inicio de sesión</h1>
+        <div class="email-log">
+          <input type="email" id="email-input" placeholder="Ingrese email">
+        </div>
+        <div class="pass-log">
+          <input type="password" id="password-input" placeholder="Contraseña">
+        </div>
+        <div class="checkbox-log">
+          <p><input type="checkbox" id="check-log">Recordarme</p>
+        </div>
+        <div class="boton-log">
+          <input type="button" value="Iniciar sesion" id="boton-log">
+        </div>
+        <div class="google-log">
+          <button class="iniciar-google" id="login"><img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"></button>
+        </div>
+      </div>  
+    </form>
   </main>
   <footer class="text-muted">
     <div class="container">
@@ -35,6 +53,37 @@
     </div>
   </footer>
   <script src="js/login.js"></script>
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js";
+    import { getAuth , GoogleAuthProvider , signInWithRedirect , getRedirectResult } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyDowEzCs0q2fmHiLLeuBLF77ufzYdUxkhc",
+      authDomain: "inicio-con.firebaseapp.com",
+      projectId: "inicio-con",
+      storageBucket: "inicio-con.appspot.com",
+      messagingSenderId: "189182958455",
+      appId: "1:189182958455:web:20f32f36d32fb1dc831f72"
+    };
+  
+    const app = initializeApp(firebaseConfig);
+    const provider = new GoogleAuthProvider(app);
+    const auth = getAuth();
+
+    document.getElementById('login').addEventListener('click', (e)=>{
+      e.preventDefault();
+      signInWithRedirect(auth, provider);
+    });
+    getRedirectResult(auth)
+      .then((result) => {
+        if (result.user.emailVerified == true) {
+          window.location = "index.html"
+        };
+        console.log(result);
+      }).catch((error) => {
+        console.log(error);
+      });
+  </script>
 </body>
 
 </html>

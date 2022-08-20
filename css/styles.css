@@ -234,3 +234,8 @@ a.custom-card:hover {
 .desc {
   font-size: 15px;
 }
+
+.div-log {
+  text-align: center;
+  border: solid;
+}
