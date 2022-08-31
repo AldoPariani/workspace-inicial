@@ -76,8 +76,10 @@
     });
     getRedirectResult(auth)
       .then((result) => {
+        console.log(result);
         if (result.user.emailVerified == true) {
           window.location = "index.html"
+          localStorage.setItem('nombre', result.user.email);
         };
         console.log(result);
       }).catch((error) => {
