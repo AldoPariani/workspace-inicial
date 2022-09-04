@@ -19,7 +19,6 @@ let Productos = [];
 fetch(URLS)
 .then(respuesta => respuesta.json())
 .then (categorias =>{
-        console.log(categorias);
         ProductosOriginal = categorias.products;
         Productos = categorias.products;
         var titulo = document.getElementById('Productos');
