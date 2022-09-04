@@ -203,6 +203,9 @@ a.custom-card:hover {
   border: solid;
   border-color: gray;
   padding: 15px;
+  border-width: 1px;
+  border-radius: 20px;
+  background-color: rgb(219, 209, 209);
 }
 
 .img {
@@ -239,12 +242,19 @@ a.custom-card:hover {
   text-align: center;
   border: solid;
 }
+#buscar {
+  display: flex;
+  justify-content: right;
+  margin: 10px;
+}
 
 #buscador {
   display: flex;
   justify-content: right;
-  border: 5px, solid;
-  padding: 10px;
+  border: solid;
+  border-width: 1px;
+  padding: 8px;
+  border-radius: 15px;
 }
 
 .filtro {
