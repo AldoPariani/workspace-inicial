@@ -239,3 +239,14 @@ a.custom-card:hover {
   text-align: center;
   border: solid;
 }
+
+#buscador {
+  display: flex;
+  justify-content: right;
+  border: 5px, solid;
+  padding: 10px;
+}
+
+.filtro {
+  display: none;
+}

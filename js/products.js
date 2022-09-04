@@ -102,5 +102,16 @@ function filtrar() {
 
 btnFiltrar.addEventListener('click', filtrar);
 
+document.addEventListener('keyup', (e) =>{
+    if (e.target.matches('#buscador')) {
+        document.querySelectorAll('.Div-categorias').forEach(prod => {
+            if (prod.textContent.toLowerCase().includes(e.target.value.toLowerCase())) {
+                prod.classList.remove('filtro');
+            } else {
+                prod.classList.add('filtro');
+            }               
+        });
+    }   
+});
 
 document.getElementsByClassName('nav-item')[3].innerHTML += `<a class="nav-link" href="my-profile.html">${localStorage.getItem('nombre')}</a>`;
