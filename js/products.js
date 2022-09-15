@@ -19,19 +19,26 @@ let Productos = [];
 fetch(URLS)
 .then(respuesta => respuesta.json())
 .then (categorias =>{
-        ProductosOriginal = categorias.products;
-        Productos = categorias.products;
-        var titulo = document.getElementById('Productos');
-        titulo.innerHTML += `<h1 id="Products"> Productos </h1>`;
-        titulo.innerHTML += `<p id="Subt"> Verás aqui todos los productos de la categoria ${categorias.catName} </p>`;
-        mostrarProductos(ProductosOriginal);
+    ProductosOriginal = categorias.products;
+    Productos = categorias.products;
+    var titulo = document.getElementById('Productos');
+    titulo.innerHTML += `<h1 id="Products"> Productos </h1>`;
+    titulo.innerHTML += `<p id="Subt"> Verás aqui todos los productos de la categoria ${categorias.catName} </p>`;
+    mostrarProductos(ProductosOriginal);
+    document.querySelectorAll(".Div-categorias").forEach((e, i) => {
+        e.addEventListener("click", function() {     
+            window.location = "product-info.html";
+            localStorage.setItem("productoElegido", (document.getElementsByClassName("Div-categorias")[i].id));
+        });   
+    });
 });
 
 function mostrarProductos(Productos){
     colection.innerHTML = "";
+    console.log(Productos);
     for(let producto of Productos){
         colection.innerHTML += `
-            <div class="Div-categorias">
+            <div class="Div-categorias" id="${producto.id}">
                 <div class="Div-img">
                     <img src="${producto.image}" alt="auto" class="img"></img> 
                 </div>
@@ -43,7 +50,7 @@ function mostrarProductos(Productos){
                     <p class="cant">${producto.soldCount} vendidos</p>
                 </div>
             </div>
-        `;
+        `;       
     };
 };
 

@@ -260,3 +260,38 @@ a.custom-card:hover {
 .filtro {
   display: none;
 }
+
+.nombre {
+  margin: 20px;
+}
+
+.info-prod {
+  border-top: solid;
+  border-bottom: solid;
+}
+
+#imagenes-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.img-info{
+  height: 150px;
+  border: solid;
+  margin: 10px;
+  border-width: 1px;
+}
+
+#comentarios {
+  margin: 30px;
+}
+
+.info-coment{
+  border: solid;
+  border-width: 1px;
+  margin: 1px;
+}
+
+.contenido {
+  margin: 5px;
+}
