@@ -3,6 +3,10 @@ const ID = localStorage.getItem('productoElegido') + '.json';
 const URLS = URL.concat(ID);
 const comentarios = 'https://japceibal.github.io/emercado-api/products_comments/'
 const URL_comentarios = comentarios.concat(ID);
+var coment = document.getElementById('comentarios');
+var boton = document.getElementById('agregar');
+var texto = document.getElementById('opinion');
+var stars = document.getElementById('stars');
 
 fetch(URLS)
 .then(respuesta => respuesta.json())
@@ -46,21 +50,51 @@ fetch(URL_comentarios)
 .then(promesa => promesa.json())
 .then(comentarios => {
     console.log(comentarios);
-    let comen = comentarios;
-    var coment = document.getElementById('comentarios');
+    let comen = comentarios; 
     coment.innerHTML = "<div><h2><b>Comentarios</b></h2></div>";
-    for (const com of comen) {
+    comen.forEach((com , index) => {
         coment.innerHTML += `
             <div class="info-coment">
                 <div class="contenido">
-                    <p><b>${com.user}</b> - ${com.dateTime} - ${com.score}</p>
+                    <b>${com.user}</b> - ${com.dateTime} - 
+                </div>
+                <div class="opinion">
                     <p>${com.description}</p>
                 </div>
             </div>
         `; 
-    };  
+        for (let i = 0; i < com.score; i++) {
+            document.getElementsByClassName('contenido')[index].innerHTML += `<span class="fa fa-star checked"></span>`
+        }
+        for (let i = 5-com.score; i>0; i--) {
+            document.getElementsByClassName('contenido')[index].innerHTML += `<span class="fa fa-star"></span>`
+        }
+     })        
 });
 
-
+boton.addEventListener('click', (e) =>{ 
+    const hoy = new Date(); 
+    if (((texto.value != "") && (stars.value != ""))) {
+        coment.innerHTML += `
+        <div class="info-coment">
+            <div class="contenido">
+                <b>${localStorage.getItem('nombre')}</b> - ${hoy.toLocaleString("sv-SE")} -
+            </div>
+            <div class="opinion">
+                <p>${texto.value}</p>
+            </div>
+        </div>`;  
+        let newcom = document.getElementsByClassName('contenido');
+        for (let i = 0; i < stars.value; i++) {
+            newcom[newcom.length - 1].innerHTML += `<span class="fa fa-star checked"></span>`
+        }
+        for (let i = 5-stars.value; i>0; i--) {
+            newcom[newcom.length - 1].innerHTML += `<span class="fa fa-star"></span>`
+        }
+    texto.value = "";
+    stars.value = "";
+        
+    }
+});
 
 document.getElementsByClassName('nav-item')[3].innerHTML += `<a class="nav-link" href="my-profile.html">${localStorage.getItem('nombre')}</a>`;

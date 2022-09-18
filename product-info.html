@@ -10,6 +10,7 @@
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -42,7 +43,16 @@
 
       </div>
       <div id="comentarios">
-    
+      
+      </div>
+      <div class="col-sm-4">
+        <label for="Item" class="form-label">Comentario:</label>
+        <input type="text" class="form-control" id="opinion" placeholder="comentario">
+        <label class="form-label">Calificación</label>
+        <input type="number" class="calificacion" id="stars" placeholder="0">
+        <div class="d-grid">
+          <button type="button" class="btn btn-primary my-3" id="agregar">Enviar</button>
+        </div>
       </div>
     </div>
   </main>
