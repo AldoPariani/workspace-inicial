@@ -25,6 +25,7 @@ fetch(URLS)
     titulo.innerHTML += `<h1 id="Products"> Productos </h1>`;
     titulo.innerHTML += `<p id="Subt"> Verás aqui todos los productos de la categoria ${categorias.catName} </p>`;
     mostrarProductos(ProductosOriginal);
+    // parte 1
     document.querySelectorAll(".Div-categorias").forEach((e, i) => {
         e.addEventListener("click", function() {     
             window.location = "product-info.html";

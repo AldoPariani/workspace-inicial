@@ -44,6 +44,17 @@ fetch(URLS)
             </div>
         </div>       
     `;
+    let ProdRel = producto.relatedProducts;
+    console.log(ProdRel);
+    for (let Rel of ProdRel) {
+        let productosRelacionados = document.getElementById('Relacionados');
+        productosRelacionados.innerHTML += `
+            <div class="relacionado">
+                <p> ${Rel.name} </p>
+                <img src="${Rel.image}" class="img-info"></img>
+            </div>
+        `;
+    }
 });
 
 fetch(URL_comentarios)
