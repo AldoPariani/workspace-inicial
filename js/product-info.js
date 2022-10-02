@@ -49,13 +49,29 @@ fetch(URLS)
     for (let Rel of ProdRel) {
         let productosRelacionados = document.getElementById('Relacionados');
         productosRelacionados.innerHTML += `
-            <div class="relacionado">
-                <p> ${Rel.name} </p>
-                <img src="${Rel.image}" class="img-info"></img>
+            <div class="relacionado" id="${Rel.id}">
+                <div>
+                    <p> ${Rel.name} </p>                    
+                </div> 
+                <div>   
+                    <img src="${Rel.image}" class="img"></img>
+                </div>    
             </div>
+            <hr>
         `;
     }
+    document.querySelectorAll(".relacionado").forEach((e, i) => {
+        e.addEventListener("click", function() {     
+            window.location = "product-info.html";
+            localStorage.setItem("productoElegido", (document.getElementsByClassName("relacionado")[i].id));
+        });   
+    });
 });
+
+
+
+
+
 
 fetch(URL_comentarios)
 .then(promesa => promesa.json())
@@ -87,14 +103,15 @@ boton.addEventListener('click', (e) =>{
     const hoy = new Date(); 
     if (((texto.value != "") && (stars.value != ""))) {
         coment.innerHTML += `
-        <div class="info-coment">
-            <div class="contenido">
-                <b>${localStorage.getItem('nombre')}</b> - ${hoy.toLocaleString("sv-SE")} -
+            <div class="info-coment">
+                <div class="contenido">
+                    <b>${localStorage.getItem('nombre')}</b> - ${hoy.toLocaleString("sv-SE")} -
+                </div>
+                <div class="opinion">
+                    <p>${texto.value}</p>
+                </div>
             </div>
-            <div class="opinion">
-                <p>${texto.value}</p>
-            </div>
-        </div>`;  
+        `;  
         let newcom = document.getElementsByClassName('contenido');
         for (let i = 0; i < stars.value; i++) {
             newcom[newcom.length - 1].innerHTML += `<span class="fa fa-star checked"></span>`
@@ -107,5 +124,3 @@ boton.addEventListener('click', (e) =>{
         
     }
 });
-
-document.getElementsByClassName('nav-item')[3].innerHTML += `<a class="nav-link" href="my-profile.html">${localStorage.getItem('nombre')}</a>`;

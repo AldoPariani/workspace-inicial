@@ -39,3 +39,21 @@ let getJSONData = function(url){
         return result;
     });
 }
+
+document.getElementsByClassName('nav-item')[3].innerHTML += `
+  <div class="dropdown">
+    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+      ${localStorage.getItem('nombre')}
+    </a>
+
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+      <li><a class="dropdown-item" href="my-profile.html">Perfil</a></li>
+      <li><a class="dropdown-item" href="#">Carrito</a></li>
+      <li><a class="dropdown-item" href="index.html" id="cerrar-sesion">Cerrar sesión</a></li>
+    </ul>
+  </div>
+`;
+
+document.getElementById('cerrar-sesion').addEventListener('click', (e) => {
+  localStorage.removeItem('nombre');
+});

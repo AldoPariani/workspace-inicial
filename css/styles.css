@@ -205,7 +205,6 @@ a.custom-card:hover {
   padding: 15px;
   border-width: 1px;
   border-radius: 20px;
-  background-color: rgb(219, 209, 209);
 }
 
 .img {
@@ -294,4 +293,15 @@ a.custom-card:hover {
 
 .contenido {
   margin: 5px;
+}
+
+#Relacionados{
+  display: flex;
+  width: 300px;
+}
+
+.relacionado {
+  border: solid;
+  border-width: 1px;
+  margin: 15px;
 }
