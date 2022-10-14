@@ -15,7 +15,7 @@ fetch(URLS)
     let prod = producto;
     var info = document.getElementById('producto')
     info.innerHTML +=` 
-        <div class="nombre"><h1>${prod.name}</h1></div>
+        <div class="nombre container-fluid d-flex justify-content-between"><h1>${prod.name}</h1> <button type="submit" class="btn btn-primary" id="agregar-carrito">Enviar al carrtio</button></div>
         <div class="info-prod"> 
             <div class="precio">
                 <p><b>Precio</b></p>
@@ -86,6 +86,39 @@ fetch(URLS)
             localStorage.setItem("productoElegido", (document.getElementsByClassName("relacionado")[i].id));
         });   
     });
+    // document.getElementById('agregar-carrito').addEventListener('click', (e)=>{
+    //     document.getElementById('info-cart').innerHTML += `
+    //     <div class="col-2">
+    //         <img>
+    //             ${prod.images[0]}
+    //         </img>
+    //     </div>
+    //     <div class="col-2">
+    //         <p>
+    //             ${prod.name}
+    //         </p>
+    //     </div>
+    //     <div class="col-2">
+    //         <p>
+    //             ${prod.currency} ${prod.cost}
+    //         </p>
+    //     </div>
+    //     <div class="col-2">
+    //         <p>
+    //             Cantidad
+    //         </p>
+    //     </div>
+    //     <div class="col-2">
+    //         <p>
+    //             <strong>${prod.currency} ${prod.cost}</strong>
+    //         </p>
+    //     </div>
+    //     `;
+    //     localStorage.setItem('name-send-carr', prod.name);
+    //     localStorage.setItem('cost-send.carr', prod.cost);
+    //     localStorage.setItem('img-send-carr', prod.images[0]);
+    //     localStorage.setItem('moneda-send-carr', prod.currency);
+    // });
 });
 
 

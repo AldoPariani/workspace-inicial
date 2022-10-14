@@ -36,9 +36,75 @@
     </div>
   </nav>
   <main>
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+    <div class="container" id="carrito-Prod">
+      <h1 class="text-center my-5">Carrito de compras</h1>
+      <div class="carrito">
+        <h4>
+          Articulos a comprar
+        </h4>
+        <div class="d-flex flex-wrap" id="info-cart">
+          <div class="col-2 arriba">
+            <p>
+              
+            </p>
+          </div>
+          <div class="col-2 arriba">
+            <p>
+              Nombre
+            </p>
+          </div>
+          <div class="col-2 arriba">
+            <p>
+              Costo
+            </p>
+          </div>
+          <div class="col-2 arriba">
+            <p>
+              Cantidad
+            </p>
+          </div>
+          <div class="col-3 arriba">
+            <p>
+              Subtotal
+            </p>
+          </div>
+        </div>       
+      </div>
+    </div>
+    <div id="tipo-Envio">
+      <div class="container">
+        <div>
+          <h4>
+            Tipo de envio:
+          </h4>
+          <input type="radio" id="premium" name="eleccion" value="premium">
+          <label for="premium">Premium de 2 a 5 días (15% extra)</label> 
+          <br>
+          <input type="radio" id="premium" name="eleccion" value="express">
+          <label for="express">Express de 5 a 8 días (7% extra)</label>
+          <br>
+          <input type="radio" id="premium" name="eleccion" value="standard">
+          <label for="standard">Standard de 12 a 15 días (5% extra)</label>
+          <br>
+          <h4 class="my-3">
+            Dirección de envio:
+          </h4>
+          <div class="d-flex flex-wrap my-3">
+            <div class="col-6 my-2">
+              <label for="Calle">Calle:</label>
+              <input type="text" name="Calle" id="calle" placeholder="Calle...">
+            </div>
+            <div class="col-6 my-2">
+              <label for="Numero">Numero:</label>
+              <input type="text" name="Numero" id="numero" placeholder="Numero...">
+            </div>
+            <div class="col-6 my-2">
+              <label for="esquina">Esquina:</label>
+              <input type="text" name="esquina" id="esquina" placeholder="Esquina...">
+            </div>
+          </div>
+          <input type="button" value="Enviar" id="Confirmar-Carrito">
+        </div>
       </div>
     </div>
   </main>

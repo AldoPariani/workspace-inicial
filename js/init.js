@@ -48,7 +48,7 @@ document.getElementsByClassName('nav-item')[3].innerHTML += `
 
     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
       <li><a class="dropdown-item" href="my-profile.html">Perfil</a></li>
-      <li><a class="dropdown-item" href="#">Carrito</a></li>
+      <li><a class="dropdown-item" href="cart.html">Carrito</a></li>
       <li><a class="dropdown-item" href="index.html" id="cerrar-sesion">Cerrar sesión</a></li>
     </ul>
   </div>

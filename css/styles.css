@@ -305,3 +305,18 @@ a.custom-card:hover {
   border-width: 1px;
   margin: 15px;
 }
+
+.arriba {
+  border-bottom: solid;
+}
+
+#tipo-Envio {
+  margin-top: 100px;
+  border-bottom: solid;
+  border-width: 1px;
+}
+
+#carrito-Prod {
+  border-bottom: solid;
+  border-width: 1px;
+}
