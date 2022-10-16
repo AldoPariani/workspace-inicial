@@ -308,6 +308,7 @@ a.custom-card:hover {
 
 .arriba {
   border-bottom: solid;
+  margin-bottom: 15px;
 }
 
 #tipo-Envio {
@@ -319,4 +320,12 @@ a.custom-card:hover {
 #carrito-Prod {
   border-bottom: solid;
   border-width: 1px;
+}
+
+#img-preCarr {
+  height: 30px;
+}
+
+#cantidad {
+  width: 60px;
 }
