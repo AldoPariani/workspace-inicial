@@ -26,8 +26,9 @@ fetch(CART_INFO)
         <input type="number" name="cantidad" id="cantidad" min="1" value="${preCarrito.count}">
     </div>
     <div class="col-3">
-        <p  id="sub-Tot">
-            ${preCarrito.currency} ${preCarrito.unitCost*preCarrito.count} 
+        <p  id="sub-Tot"><strong>
+            ${preCarrito.currency} ${preCarrito.unitCost*preCarrito.count}
+        </strong> 
         </p>
     </div>
     `;
@@ -37,7 +38,7 @@ fetch(CART_INFO)
         let subtotal = precioUnit * cant.value;
         console.log(subtotal); 
         document.getElementById('sub-Tot').innerHTML = `
-                ${preCarrito.currency} ${subtotal}
+                <strong>${preCarrito.currency} ${subtotal}</strong>
         `;  
     });
 });
