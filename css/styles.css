@@ -313,7 +313,7 @@ a.custom-card:hover {
 
 #tipo-Envio {
   margin-top: 100px;
-  border-bottom: solid;
+
   border-width: 1px;
 }
 
@@ -328,4 +328,17 @@ a.custom-card:hover {
 
 #cantidad {
   width: 60px;
+}
+
+.datos-General {
+  border: solid;
+  border-radius: 10px;
+  border-width: 1px;
+  border-color: gray;
+}
+
+.derecha {
+  display: flex;
+  justify-content: right;
+  align-items: center;
 }

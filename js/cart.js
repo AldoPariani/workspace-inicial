@@ -32,13 +32,69 @@ fetch(CART_INFO)
         </p>
     </div>
     `;
+
     let cant = document.getElementById('cantidad');
     cant.addEventListener('input', (e) =>{
         let precioUnit = preCarrito.unitCost;
         let subtotal = precioUnit * cant.value;
         console.log(subtotal); 
         document.getElementById('sub-Tot').innerHTML = `
-                <strong>${preCarrito.currency} ${subtotal}</strong>
-        `;  
+            <strong>${preCarrito.currency} ${subtotal}</strong>
+        `;
+
+        document.getElementById('gen-Sub').innerHTML = `
+            <p class="derecha">${preCarrito.currency} ${subtotal}</p>
+        `;
+
+        document.getElementById('gen-Tot').innerHTML = `
+            <p class="derecha">${preCarrito.currency} ${subtotal}</p>
+        `;
+
+        // if (document.getElementById('premium').checkValidity() === true) {
+        //     document.getElementById('gen-Cost').innerHTML = `
+        //         <p class="derecha">${preCarrito.currency} ${preCarrito.unitCost*preCarrito.count*0.15}</p>
+        //     `;
+        // } else if (document.getElementById('express')) {
+        //     document.getElementById('gen-Cost').innerHTML = `
+        //         <p class="derecha">${preCarrito.currency} ${preCarrito.unitCost*preCarrito.count*0.07}</p>
+        //     `;
+        // } else if (document.getElementById('standard')) {
+        //     document.getElementById('gen-Cost').innerHTML = `
+        //         <p class="derecha">${preCarrito.currency} ${preCarrito.unitCost*preCarrito.count*0.05}</p>
+        //     `;
+        // }
     });
+
+    document.getElementById('general-Subt').innerHTML += `
+        <div class="col-6" id="gen-Sub">
+            <p class="derecha">${preCarrito.currency} ${preCarrito.unitCost*preCarrito.count}</p>
+        </div>
+    `;
+    document.getElementById('general-Total').innerHTML += `
+        <div class="col-6">
+            <strong><p class="derecha" id="gen-Tot">${preCarrito.currency} ${preCarrito.unitCost*preCarrito.count}</p></strong>
+        </div>
+    `;
 });
+
+// (function () {
+//     'use strict'
+//     var forms = document.querySelectorAll('.needs-validation')
+  
+//     Array.prototype.slice.call(forms)
+//       .forEach(function (form) {
+//         form.addEventListener('submit', function (event) {
+//             verificarModal();
+//             if (!form.checkValidity()) {
+//             event.preventDefault()
+//             event.stopPropagation()
+//             }
+//             form.classList.add('was-validated')
+//         }, false)
+//     })
+// })()
+function modalver() {
+    if (document.getElementById('tarjeta').checkValidity() === true) {
+        document.getElementById('num-tarj').classList.remove('filtro');
+    }
+}
