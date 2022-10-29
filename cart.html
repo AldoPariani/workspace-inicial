@@ -184,10 +184,15 @@
               data-bs-toggle="modal"
               data-bs-target="#exampleModal"
             >
-              Seleccione modo de pago
+              Seleccione forma de pago
             </button>
-            <p class="filtro" id="P-error" style="color: red;">No ha seleccionado un modo de pago</p>
+            <p class="filtro" id="llenar-datos" style="color: red;">Complete los campos de datos</p>
             <hr />
+          </div>
+        </div>
+        <div id="msg">
+          <div id="ok" class="alert alert-success filtro" role="alert">
+              Ah realizado la compra con éxito ! (Procesando datos ... )
           </div>
         </div>
 
@@ -200,6 +205,8 @@
             >
               Confirmar compra
             </button>
+            <p class="filtro" id="P-error" style="color: red;">No ha seleccionado una forma de pago</p>
+            <p class="filtro" id="P-dirrecion" style="color: red;">Indique la dirección</p>
           </div>
         </div>
 
@@ -245,6 +252,7 @@
                         type="text"
                         id="N-tarjeta"
                         name="N-tarjeta"
+                        class="form-control"
                         required
                       />
                     </div>
@@ -252,7 +260,7 @@
                       <label for="C-seg" class="form-label"
                         >Código de seg.::</label
                       >
-                      <input type="text" id="C-seg" name="C-seg" required />
+                      <input type="text" id="C-seg" name="C-seg" class="form-control" required />
                     </div>
                     <div class="col-12 my-2 clas-tarjeta">
                       <label for="vencimiento">Vencimiento:</label>
@@ -260,6 +268,7 @@
                         type="date"
                         id="Vencimiento"
                         name="vencimiento"
+                        class="form-control"
                         required
                       />
                     </div>
@@ -282,7 +291,7 @@
                       <label for="N-cuenta" class="form-label"
                         >Número de cuenta:</label
                       >
-                      <input type="text" id="N-cuenta" required />
+                      <input type="text" id="N-cuenta" class="form-control" required />
                     </div>
                   </div>
                 </div>

@@ -84,13 +84,21 @@ fetch(CART_INFO)
     Array.prototype.slice.call(forms)
       .forEach(function (form) {
         form.addEventListener('submit', function (event) {
-            opcionmodal()
-            console.log('hola');
+            opcionmodal();
+            direccion();
+
             if (!form.checkValidity()) {
             event.preventDefault()
             event.stopPropagation()
+            } else {
+                event.preventDefault()
+                document.getElementById("ok").classList.remove("filtro");
+                setTimeout(function() {
+                    location.reload();
+                }, 4000);
             }
             form.classList.add('was-validated')
+            
         }, false)
     })
 })()
@@ -102,13 +110,46 @@ function opcionmodal() {
         document.getElementById('C-seg').disabled = false;
         document.getElementById('Vencimiento').disabled = false;
         document.getElementById('P-error').classList.add('filtro');
+        if ((document.getElementById('N-tarjeta').value == "")) {
+            document.getElementById('llenar-datos').classList.remove('filtro');
+        } else if ((document.getElementById('C-seg').value == "")) {
+            document.getElementById('llenar-datos').classList.remove('filtro');
+        } else if ((document.getElementById('Vencimiento').value == "")) {
+            document.getElementById('llenar-datos').classList.remove('filtro');
+        } else {
+            document.getElementById('llenar-datos').classList.add('filtro');
+        }
     } else if (document.getElementById('banco').checked) {
         document.getElementById('N-cuenta').disabled = false;
         document.getElementById('N-tarjeta').disabled = true;
         document.getElementById('C-seg').disabled = true;
         document.getElementById('Vencimiento').disabled = true;
         document.getElementById('P-error').classList.add('filtro');
+        if ((document.getElementById('N-cuenta').value == "")) {
+            document.getElementById('llenar-datos').classList.remove('filtro');
+        } else {
+            document.getElementById('llenar-datos').classList.add('filtro');
+        }
     } else {
         document.getElementById('P-error').classList.remove('filtro');
     }
+}
+
+function direccion() {
+    if ((document.getElementById('calle').value == "")) {
+        document.getElementById('P-dirrecion').classList.remove('filtro');
+    } else if ((document.getElementById('numero').value == "")) {
+        document.getElementById('P-dirrecion').classList.remove('filtro');
+    } else if ((document.getElementById('esquina').value == "")) {
+        document.getElementById('P-dirrecion').classList.remove('filtro');
+    } else {
+        document.getElementById('P-dirrecion').classList.add('filtro');
+    }
+}
+
+function comprado() {
+    document.getElementById("ok").classList.remove("filtro");
+    setTimeout(function() {
+        location.reload();
+    }, 3000);
 }
