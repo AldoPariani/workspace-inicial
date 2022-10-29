@@ -1,251 +1,335 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>eMercado - Todo lo que busques está aquí</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i"
+      rel="stylesheet"
+    />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+  </head>
 
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>eMercado - Todo lo que busques está aquí</title>
-  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/font-awesome.min.css" rel="stylesheet">
-  <link href="css/styles.css" rel="stylesheet">
-</head>
-
-<body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
-    <div class="container">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav w-100 justify-content-between">
-          <li class="nav-item">
-            <a class="nav-link" href="main.html">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="categories.html">Categorías</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="sell.html">Vender</a>
-          </li>
-          <li class="nav-item">
-          </li>
-        </ul>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
+      <div class="container">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav w-100 justify-content-between">
+            <li class="nav-item">
+              <a class="nav-link" href="main.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="categories.html">Categorías</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="sell.html">Vender</a>
+            </li>
+            <li class="nav-item"></li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
-  <main>
-
-    <div class="container" id="carrito-Prod">
-      <h1 class="text-center my-5">Carrito de compras</h1>
-      <div class="carrito">
-        <h4>
-          Articulos a comprar
-        </h4>
-        <div class="d-flex flex-wrap" id="info-cart">
-          <div class="col-2 arriba">
-            <p>
-              
-            </p>
+    </nav>
+    <main>
+      <div class="container" id="carrito-Prod">
+        <h1 class="text-center my-5">Carrito de compras</h1>
+        <div class="carrito">
+          <h4>Articulos a comprar</h4>
+          <div class="d-flex flex-wrap" id="info-cart">
+            <div class="col-2 arriba">
+              <p></p>
+            </div>
+            <div class="col-2 arriba">
+              <p>
+                <strong> Nombre </strong>
+              </p>
+            </div>
+            <div class="col-2 arriba">
+              <p>
+                <strong> Costo </strong>
+              </p>
+            </div>
+            <div class="col-2 arriba">
+              <p>
+                <strong> Cantidad </strong>
+              </p>
+            </div>
+            <div class="col-3 arriba">
+              <p>
+                <strong> Subtotal </strong>
+              </p>
+            </div>
           </div>
-          <div class="col-2 arriba">
-            <p>
-              <strong>
-                Nombre
-              </strong>
-            </p>
-          </div>
-          <div class="col-2 arriba">
-            <p>
-              <strong>
-                Costo
-              </strong>
-            </p>
-          </div>
-          <div class="col-2 arriba">
-            <p>
-              <strong>
-                Cantidad
-              </strong>
-            </p>
-          </div>
-          <div class="col-3 arriba">
-            <p>
-              <strong>
-                Subtotal
-              </strong>
-            </p>
-          </div>
-        </div>       
+        </div>
       </div>
-    </div>
 
-    <form class="row g-3 needs-validation" novalidate></form>
-      <div id="tipo-Envio">
-        <div class="container">
-          <div>
-            <h4>
-              Tipo de envio:
-            </h4>
-            <input type="radio" id="premium" name="eleccion" value="premium">
-            <label for="premium">Premium de 2 a 5 días (15% extra)</label> 
-            <br>
-            <input type="radio" id="express" name="eleccion" value="express">
-            <label for="express">Express de 5 a 8 días (7% extra)</label>
-            <br>
-            <input type="radio" id="standard" name="eleccion" value="standard">
-            <label for="standard">Standard de 12 a 15 días (5% extra)</label>
-            <br>
-            <h4 class="my-3">
-              Dirección de envio:
-            </h4>
+      <form class="row g-3 needs-validation" novalidate>
+        <div id="tipo-Envio">
+          <div class="container">
+            <div>
+              <h4>Tipo de envio:</h4>
+              <input
+                type="radio"
+                id="premium"
+                name="eleccion"
+                value="premium"
+              />
+              <label for="premium">Premium de 2 a 5 días (15% extra)</label>
+              <br />
+              <input
+                type="radio"
+                id="express"
+                name="eleccion"
+                value="express"
+              />
+              <label for="express">Express de 5 a 8 días (7% extra)</label>
+              <br />
+              <input
+                type="radio"
+                id="standard"
+                name="eleccion"
+                value="standard"
+                checked
+              />
+              <label for="standard">Standard de 12 a 15 días (5% extra)</label>
+              <br />
+              <h4 class="my-3">Dirección de envio:</h4>
               <div class="d-flex flex-wrap my-3">
                 <div class="col-6 my-2">
                   <label for="Calle" class="form-label">Calle:</label>
-                  <input type="text" name="Calle" class="form-control" id="calle" placeholder="Calle..." required>
+                  <input
+                    type="text"
+                    name="Calle"
+                    class="form-control"
+                    id="calle"
+                    placeholder="Calle..."
+                    required
+                  />
                 </div>
                 <div class="col-6 my-2">
                   <label for="Numero" class="form-label">Numero:</label>
-                  <input type="text" name="Numero" class="form-control" id="numero" placeholder="Numero..." required>
+                  <input
+                    type="text"
+                    name="Numero"
+                    class="form-control"
+                    id="numero"
+                    placeholder="Numero..."
+                    required
+                  />
                 </div>
                 <div class="col-6 my-2">
                   <label for="esquina" class="form-label">Esquina:</label>
-                  <input type="text" name="esquina" class="form-control" id="esquina" placeholder="Esquina..." required>
+                  <input
+                    type="text"
+                    name="esquina"
+                    class="form-control"
+                    id="esquina"
+                    placeholder="Esquina..."
+                    required
+                  />
                 </div>
               </div>
-            <hr>  
+              <hr />
+            </div>
           </div>
         </div>
-      </div>
 
-      <div id="Costos">
-        <div class="container">
-          <h4 class="my-3">
-            Costos
-          </h4>
-          <div class="datos-General d-flex flex-wrap" id="general-Subt">
-            <div class="col-6">
-              <h5 class="col-12">
-                Subtotal
-              </h5>
-              <p class="col-12">
-                Costo unitario del producto por cantidad
-              </p>
+        <div id="Costos">
+          <div class="container">
+            <h4 class="my-3">Costos</h4>
+            <div class="datos-General d-flex flex-wrap" id="general-Subt">
+              <div class="col-6">
+                <h5 class="col-12">Subtotal</h5>
+                <p class="col-12">Costo unitario del producto por cantidad</p>
+              </div>
             </div>
-          </div>
-          <div class="datos-General d-flex flex-wrap" id="general-Cost">
-            <div class="col-6">
-              <h5 class="col-12">
-                Costo de envio
-              </h5>
-              <p class="col-12">
-                Segun el tipo de envio
-              </p>
+            <div class="datos-General d-flex flex-wrap" id="general-Cost">
+              <div class="col-6">
+                <h5 class="col-12">Costo de envio</h5>
+                <p class="col-12">Segun el tipo de envio</p>
+              </div>
+              <div class="col-6" id="gen-Cost">
+                <p class="derecha"></p>
+              </div>
             </div>
-            <div class="col-6" id="gen-Cost">
-              <p class="derecha"></p>
+            <div class="datos-General d-flex flex-wrap" id="general-Total">
+              <h5 class="col-6">Total (USD)</h5>
             </div>
+            <hr />
           </div>
-          <div class="datos-General d-flex flex-wrap" id="general-Total">
-            <h5 class="col-6">
-              Total (USD)
-            </h5>
-          </div>
-          <hr>
         </div>
-      </div>
 
-      <div id="Forma-pago">
-        <div class="container">
-          <h5 class="col-12">Forma de Pago</h5>
-          <button type="button" class="m-1 btn btn-link col-md-4" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            Seleccione modo de pago
-          </button>
-          <hr>
+        <div id="Forma-pago">
+          <div class="container">
+            <h5 class="col-12">Forma de Pago</h5>
+            <button
+              type="button"
+              class="m-1 btn btn-link col-md-4"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+            >
+              Seleccione modo de pago
+            </button>
+            <p class="filtro" id="P-error" style="color: red;">No ha seleccionado un modo de pago</p>
+            <hr />
+          </div>
         </div>
-      </div>
-      
+
+        <div class="container">
+          <div class="col-md-12" style="text-align: center;">
+            <button
+              class="btn btn-primary"
+              type="submit"
+              id="Confirmar-Carrito"
+            >
+              Confirmar compra
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="modal fade"
+          id="exampleModal"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">
+                  Forma de pago
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <div class="col-12 my-2">
+                  <label for="tarjeta" class="form-check-label"
+                    >Tarjeta de credito</label
+                  >
+                  <input
+                    type="radio"
+                    name="modo-pago"
+                    class="form-check-input"
+                    id="tarjeta"
+                    onclick="opcionmodal()"
+                  />
+                  <hr />
+                  <div class="d-flex flex-wrap my-3">
+                    <div class="col-6 my-2">
+                      <label for="N-tarjeta" class="form-label"
+                        >Número de tarjeta:</label
+                      >
+                      <input
+                        type="text"
+                        id="N-tarjeta"
+                        name="N-tarjeta"
+                        required
+                      />
+                    </div>
+                    <div class="col-6 my-2 clas-tarjeta">
+                      <label for="C-seg" class="form-label"
+                        >Código de seg.::</label
+                      >
+                      <input type="text" id="C-seg" name="C-seg" required />
+                    </div>
+                    <div class="col-12 my-2 clas-tarjeta">
+                      <label for="vencimiento">Vencimiento:</label>
+                      <input
+                        type="date"
+                        id="Vencimiento"
+                        name="vencimiento"
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 my-2">
+                  <label for="banco" class="form-check-label"
+                    >Transferencia bancaria</label
+                  >
+                  <input
+                    type="radio"
+                    name="modo-pago"
+                    class="form-check-input"
+                    id="banco"
+                    onclick="opcionmodal()"
+                  />
+                  <hr />
+                  <div class="d-flex flex-wrap my-3">
+                    <div class="col-6 my-2 clas-banco">
+                      <label for="N-cuenta" class="form-label"
+                        >Número de cuenta:</label
+                      >
+                      <input type="text" id="N-cuenta" required />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Cerrar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </main>
+
+    <footer class="text-muted">
       <div class="container">
-        <div class="col-md-12">
-          <button class="btn btn-primary" type="submit" id="Confirmar-Carrito">Confirmar compra</button>
-        </div>
+        <p class="float-end">
+          <a href="#">Volver arriba</a>
+        </p>
+        <p>
+          Este sitio forma parte de
+          <a href="https://jovenesaprogramar.edu.uy/" target="_blank"
+            >Jovenes a Programar</a
+          >
+          - 2022
+        </p>
+        <p>
+          Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la
+          letra del obligatorio.
+        </p>
       </div>
-      
-
-
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Forma de pago</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <div class="col-12 my-2">
-                <label for="tarjeta" class="form-check-label">Tarjeta de credito</label>
-                <input type="radio" name="modo-pago" class="form-check-input" id="tarjeta">
-                <hr>
-                <div class="d-flex flex-wrap my-3"> 
-                  <div class="col-6 my-2">
-                    <label for="N-tarjeta" class="form-label">Número de tarjeta:</label>
-                    <input type="text" id="N-tarjeta" required>
-                  </div>
-                  <div class="col-6 my-2 clas-tarjeta">
-                    <label for="C-seg" class="form-label">Código de seg.::</label>
-                    <input type="text" id="C-seg" required>
-                  </div>
-                  <div class="col-12 my-2 clas-tarjeta">
-                    <label for="vencimiento">Vencimiento:</label>
-                    <input type="date" id="Vencimiento" required>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 my-2">
-                <label for="banco" class="form-check-label">Transferencia bancaria</label>
-                <input type="radio" name="modo-pago" class="form-check-input" id="banco">
-                <hr>
-                <div class="d-flex flex-wrap my-3"> 
-                  <div class="col-6 my-2 clas-banco">
-                    <label for="N-cuenta" class="form-label">Número de cuenta:</label>
-                    <input type="text" id="N-cuenta" required>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            </div>
-          </div>
-        </div>
+    </footer>
+    <div id="spinner-wrapper">
+      <div class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
       </div>
-    </form>
-
-
-  </main>
-
-
-  <footer class="text-muted">
-    <div class="container">
-      <p class="float-end">
-        <a href="#">Volver arriba</a>
-      </p>
-      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a> -
-        2022</p>
-      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
     </div>
-  </footer>
-  <div id="spinner-wrapper">
-    <div class="lds-ring">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  </div>
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/init.js"></script>
-  <script src="js/cart.js"></script>
-</body>
-
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/cart.js"></script>
+  </body>
 </html>

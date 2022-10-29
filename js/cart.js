@@ -76,3 +76,39 @@ fetch(CART_INFO)
         </div>
     `;
 });
+
+(function () {
+    'use strict'
+    var forms = document.querySelectorAll('.needs-validation')
+  
+    Array.prototype.slice.call(forms)
+      .forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+            opcionmodal()
+            console.log('hola');
+            if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+            }
+            form.classList.add('was-validated')
+        }, false)
+    })
+})()
+
+function opcionmodal() {
+    if (document.getElementById('tarjeta').checked) {
+        document.getElementById('N-cuenta').disabled = true;
+        document.getElementById('N-tarjeta').disabled = false;
+        document.getElementById('C-seg').disabled = false;
+        document.getElementById('Vencimiento').disabled = false;
+        document.getElementById('P-error').classList.add('filtro');
+    } else if (document.getElementById('banco').checked) {
+        document.getElementById('N-cuenta').disabled = false;
+        document.getElementById('N-tarjeta').disabled = true;
+        document.getElementById('C-seg').disabled = true;
+        document.getElementById('Vencimiento').disabled = true;
+        document.getElementById('P-error').classList.add('filtro');
+    } else {
+        document.getElementById('P-error').classList.remove('filtro');
+    }
+}
