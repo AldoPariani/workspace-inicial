@@ -67,8 +67,6 @@ fetch(CART_INFO)
     
 });
 
-console.log(document.getElementById('premium').checked);
-
 function costoEnvio() {
     let valorCantidad = document.getElementById('cantidad')
     if (document.getElementById('premium').checked) {
@@ -94,18 +92,14 @@ function costoEnvio() {
     Array.prototype.slice.call(forms)
       .forEach(function (form) {
         form.addEventListener('submit', function (event) {
-            costoEnvio();
             opcionmodal();
             direccion();
             if (!form.checkValidity()) {
             event.preventDefault()
             event.stopPropagation()
             } else {
-                event.preventDefault()
-                document.getElementById("ok").classList.remove("filtro");
-                setTimeout(function() {
-                    location.reload();
-                }, 4000);
+                event.preventDefault();
+                comprado();
             }
             form.classList.add('was-validated')
             
@@ -161,5 +155,5 @@ function comprado() {
     document.getElementById("ok").classList.remove("filtro");
     setTimeout(function() {
         location.reload();
-    }, 3000);
+    }, 4000);
 }
