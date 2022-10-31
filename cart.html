@@ -89,6 +89,7 @@
                 id="premium"
                 name="eleccion"
                 value="premium"
+                onclick="costoEnvio()"
               />
               <label for="premium">Premium de 2 a 5 días (15% extra)</label>
               <br />
@@ -97,6 +98,7 @@
                 id="express"
                 name="eleccion"
                 value="express"
+                onclick="costoEnvio()"
               />
               <label for="express">Express de 5 a 8 días (7% extra)</label>
               <br />
@@ -105,6 +107,7 @@
                 id="standard"
                 name="eleccion"
                 value="standard"
+                onclick="costoEnvio()"
                 checked
               />
               <label for="standard">Standard de 12 a 15 días (5% extra)</label>
@@ -165,7 +168,7 @@
                 <p class="col-12">Segun el tipo de envio</p>
               </div>
               <div class="col-6" id="gen-Cost">
-                <p class="derecha"></p>
+                <p class="derecha" id="cost-Gen"></p>
               </div>
             </div>
             <div class="datos-General d-flex flex-wrap" id="general-Total">

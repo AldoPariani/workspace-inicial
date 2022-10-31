@@ -1,12 +1,13 @@
 const CART_INFO = "https://japceibal.github.io/emercado-api/user_cart/25801.json";
 
 let contenedorCarrito = document.getElementById('info-cart');
+let preCarrito
 
 fetch(CART_INFO)
 .then(respuesta => respuesta.json())
 .then(datos => {
     console.log(datos);
-    let preCarrito = datos.articles[0];
+    preCarrito = datos.articles[0];
     console.log(preCarrito);
     contenedorCarrito.innerHTML += `
     <div class="col-2">
@@ -23,7 +24,7 @@ fetch(CART_INFO)
         </p>
     </div>
     <div class="col-2">
-        <input type="number" name="cantidad" id="cantidad" min="1" value="${preCarrito.count}">
+        <input type="number" name="cantidad" id="cantidad" min="1" onclick="costoEnvio()">
     </div>
     <div class="col-3">
         <p  id="sub-Tot"><strong>
@@ -37,7 +38,8 @@ fetch(CART_INFO)
     cant.addEventListener('input', (e) =>{
         let precioUnit = preCarrito.unitCost;
         let subtotal = precioUnit * cant.value;
-        console.log(subtotal); 
+        console.log(subtotal);
+
         document.getElementById('sub-Tot').innerHTML = `
             <strong>${preCarrito.currency} ${subtotal}</strong>
         `;
@@ -50,19 +52,6 @@ fetch(CART_INFO)
             <p class="derecha">${preCarrito.currency} ${subtotal}</p>
         `;
 
-        // if (document.getElementById('premium').checkValidity() === true) {
-        //     document.getElementById('gen-Cost').innerHTML = `
-        //         <p class="derecha">${preCarrito.currency} ${preCarrito.unitCost*preCarrito.count*0.15}</p>
-        //     `;
-        // } else if (document.getElementById('express')) {
-        //     document.getElementById('gen-Cost').innerHTML = `
-        //         <p class="derecha">${preCarrito.currency} ${preCarrito.unitCost*preCarrito.count*0.07}</p>
-        //     `;
-        // } else if (document.getElementById('standard')) {
-        //     document.getElementById('gen-Cost').innerHTML = `
-        //         <p class="derecha">${preCarrito.currency} ${preCarrito.unitCost*preCarrito.count*0.05}</p>
-        //     `;
-        // }
     });
 
     document.getElementById('general-Subt').innerHTML += `
@@ -75,7 +64,28 @@ fetch(CART_INFO)
             <strong><p class="derecha" id="gen-Tot">${preCarrito.currency} ${preCarrito.unitCost*preCarrito.count}</p></strong>
         </div>
     `;
+    
 });
+
+console.log(document.getElementById('premium').checked);
+
+function costoEnvio() {
+    let valorCantidad = document.getElementById('cantidad')
+    if (document.getElementById('premium').checked) {
+        document.getElementById('cost-Gen').innerHTML = `
+                ${preCarrito.currency} ${preCarrito.unitCost*valorCantidad.value*0.15}
+            `;
+    } else if (document.getElementById('express').checked) {
+        document.getElementById('cost-Gen').innerHTML = `
+                ${preCarrito.currency} ${preCarrito.unitCost*valorCantidad.value*0.07}
+            `;
+    } else if (document.getElementById('standard').checked) {
+        document.getElementById('cost-Gen').innerHTML = `
+            ${preCarrito.currency} ${preCarrito.unitCost*valorCantidad.value*0.05}
+        `;
+    }
+};
+
 
 (function () {
     'use strict'
@@ -84,9 +94,9 @@ fetch(CART_INFO)
     Array.prototype.slice.call(forms)
       .forEach(function (form) {
         form.addEventListener('submit', function (event) {
+            costoEnvio();
             opcionmodal();
             direccion();
-
             if (!form.checkValidity()) {
             event.preventDefault()
             event.stopPropagation()
