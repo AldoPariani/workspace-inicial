@@ -52,9 +52,46 @@
   </nav>
   <main>
     <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
-      </div>
+      <h1>Perfil</h1>
+      <hr>
+      <form class="row g-3 needs-validation">
+        <div class="col-md-6">
+          <label for="validationDefault01" class="form-label">Primer nombre</label>
+          <input type="text" class="form-control" id="validationDefault01" required>
+        </div>
+        <div class="col-md-6">
+          <label for="validationDefault012" class="form-label">Segundo nombre</label>
+          <input type="text" class="form-control" id="validationDefault012">
+        </div>
+        <div class="col-md-6">
+          <label for="validationDefault02" class="form-label">Primer Apellido</label>
+          <input type="text" class="form-control" id="validationDefault02" required>
+        </div>
+        <div class="col-md-6">
+          <label for="validationDefault022" class="form-label">Segundo Apellido</label>
+          <input type="text" class="form-control" id="validationDefault022">
+        </div>
+        <div class="col-md-6">
+          <label for="validationDefaultUsername" class="form-label">Email:</label>
+          <div class="input-group">
+            <input type="email" class="form-control" id="validationDefaultUsername"  aria-describedby="inputGroupPrepend2" required>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="validationDefaultNumber" class="form-label">Número de telefono:</label>
+          <div class="input-group">
+            <input type="number" class="form-control" id="validationDefaultNumber"  aria-describedby="inputGroupPrepend2">
+          </div>
+        </div>
+        <div id="msg">
+          <div id="ok" class="alert alert-success filtro" role="alert">
+              Datos guardados con éxito ! (Procesando datos ... )
+          </div>
+        </div>
+        <div class="col-12">
+          <button class="btn btn-primary" type="submit" id="Guardar">Guardar cambios</button>
+        </div>
+      </form>
     </div>
   </main>
   <footer class="text-muted">
